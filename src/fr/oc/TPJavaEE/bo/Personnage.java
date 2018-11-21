@@ -1,6 +1,8 @@
 package fr.oc.TPJavaEE.bo;
 
-public abstract  class  Personnage {
+import fr.oc.TPJavaEE.buisness.PersonnageInt;
+
+public abstract  class  Personnage implements PersonnageInt {
 
 	private int niveau;
 	private int force;
@@ -39,10 +41,7 @@ public abstract  class  Personnage {
 		setIntelligence(intelligence);
 	}
 	
-	public void attaqueBasique(){
-	}
-	public void attaqueSpeciale(){
-	}
+
 	
 	
 }
