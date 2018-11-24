@@ -2,8 +2,8 @@ package fr.oc.TPJavaEE.bo;
 
 public class Mage extends Personnage{
 
-	public Mage(int niveau, int force, int agilite, int intelligence) {
-		super(niveau, force, agilite, intelligence);
+	public Mage(int niveau, int force, int agilite, int intelligence, int numPersonnage) {
+		super(niveau, force, agilite, intelligence, numPersonnage);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -16,5 +16,14 @@ public class Mage extends Personnage{
 	//Attention, il ne peut pas avoir plus de vie qu’il n’en avait au départ.
 	public void attaqueSpeciale(){
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"Abracadabra je suis le Mage joueur a definir "+super.toString());
+	}
+	
+	
+	
 
 }

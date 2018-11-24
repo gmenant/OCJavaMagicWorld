@@ -55,6 +55,17 @@ public class ControleValeurs {
 			}
 		return test;
 		}
+	
+	public static Boolean verifStat(Integer force, Integer agilite,Integer intelligence,Integer niveau){
+		Boolean test = true;
+		int somme = force+ agilite+ intelligence ; 
+		if(somme != niveau){
+			System.out.println("La somme de la force, agilite et intelligence n'est pas égale à votre niveau");
+			test = false;
+		}
+			
+		return test;
+		}
 	}
 	
 

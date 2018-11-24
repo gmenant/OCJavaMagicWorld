@@ -2,8 +2,8 @@ package fr.oc.TPJavaEE.bo;
 
 public class Rodeur extends Personnage{
 
-	public Rodeur(int niveau, int force, int agilite, int intelligence) {
-		super(niveau, force, agilite, intelligence);
+	public Rodeur(int niveau, int force, int agilite, int intelligence, int numPersonnage) {
+		super(niveau, force, agilite, intelligence, numPersonnage);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -17,4 +17,12 @@ public class Rodeur extends Personnage{
 	public void attaqueSpeciale(){
 	}
 
+	@Override
+	public String toString() {
+		return String.format(
+				"Niarkniark je suis le Rodeur joueur a definir "+super.toString());
+	}
+
+	
+	
 }
