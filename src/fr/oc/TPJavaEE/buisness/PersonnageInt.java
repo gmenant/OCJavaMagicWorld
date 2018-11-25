@@ -3,6 +3,6 @@ package fr.oc.TPJavaEE.buisness;
 public interface PersonnageInt {
 
 	
-	public void attaqueBasique();
-	public void attaqueSpeciale();
+	public String attaqueBasique();
+	public String attaqueSpeciale();
 }

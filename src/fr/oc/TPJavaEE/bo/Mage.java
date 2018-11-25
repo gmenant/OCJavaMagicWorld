@@ -8,13 +8,22 @@ public class Mage extends Personnage{
 	}
 	
 	//Attaque Basique - Boule de Feu : Effectue des dommages égaux à l’intelligence du joueur sur l’adversaire.
-	public void attaqueBasique(){
+	public String attaqueBasique(){
+		String attaque = "Joueur "+this.getNumPersonnage()+" utilise Boule de Feu et inflige "+getIntelligence()+" dommages";
+		
+		return attaque;
 		
 	}
 	
 	//Attaque Spéciale - Soin : Le joueur soigne sa vie et regagne sa quantité d’intelligence fois 2 en points de vie.
 	//Attention, il ne peut pas avoir plus de vie qu’il n’en avait au départ.
-	public void attaqueSpeciale(){
+	public String attaqueSpeciale(){
+		int gain = getIntelligence()*2;
+		String attaque = "Joueur "+this.getNumPersonnage()+" utilise Soin et gagne "+gain+"";
+		this.setVie(gain);
+		//TODO
+		
+		return attaque;
 	}
 
 	@Override

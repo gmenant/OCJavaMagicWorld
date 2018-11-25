@@ -62,8 +62,8 @@ public abstract  class  Personnage implements PersonnageInt {
 	}
 	@Override
 	public String toString() {
-		return String.format("niveau %d, je possède %d de vitalité, %d de force, %d d'agilité, et %d d'intelligence !",
-				niveau, vie, force,	agilite, intelligence);
+		return String.format("%d niveau %d, je possède %d de vitalité, %d de force, %d d'agilité, et %d d'intelligence !",
+				numPersonnage, niveau, vie, force,	agilite, intelligence);
 	}
 	
 	
