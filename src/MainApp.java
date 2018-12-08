@@ -9,8 +9,8 @@ import fr.oc.TPJavaEE.util.ControleValeurs;
 public class MainApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
+		final String ANSI_RED = "\u001B[31m";
 		Scanner sc = new Scanner(System.in);
 		
 		//Liste de joueurs
@@ -27,7 +27,7 @@ public class MainApp {
 			Integer choixClassePersonnage = 0;
 			
 			do{
-				System.out.println("Création du personnage du Joueur 1");
+				System.out.println("Création du personnage du Joueur "+numPersonnage);
 				System.out.println("Veuillez choisir la classe de votre personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
 				choixClassePersonnage = sc.nextInt();
 				
@@ -72,38 +72,44 @@ public class MainApp {
 		joueurs.add(personnage);
 		
 		}
-		System.out.println(joueurs);
 		//Debut déroulement du jeu
 		Personnage joueurActif;
 		Personnage joueurPassif;
+		
+		//Des numeros pour parcourir le tableau
 		int numeJActif = 0;
 		int numJPassif = 1;
 		int temp = 0;
 		String typeAttaque = null;
-		{
+		
+		do{
 			joueurActif= joueurs.get(numeJActif);
 			joueurPassif= joueurs.get(numJPassif);
+			int numeJActifAffichage = numeJActif+1;
 			
-			System.out.println("Joueur "+numeJActif +"("+joueurActif.getVie()+") veuillez choisir votre action(1 : Attaque Basique, 2 : Attaque Spéciale)");
+			System.out.println("\nJoueur "+numeJActifAffichage +" ("+joueurActif.getVie()+") veuillez choisir votre action(1 : Attaque Basique, 2 : Attaque Spéciale)");
 			
 			int attaque = sc.nextInt();	
 			
 			if(attaque == 1){
-				typeAttaque = joueurActif.attaqueBasique();
+				typeAttaque = joueurActif.attaqueBasique(joueurPassif);
 				
 			}
 			if(attaque == 2){
-				typeAttaque = joueurActif.attaqueSpeciale();
+				typeAttaque = joueurActif.attaqueSpeciale(joueurPassif);
 			}
 			
-			System.out.println("Joueur "+joueurActif.getNumPersonnage()+" utilise "+typeAttaque);
+		
+			System.out.println(typeAttaque);
 			
 			temp = numeJActif;
 			numeJActif = numJPassif ;
 			numJPassif = temp;
+			
 		}
 		while(joueurPassif.getVie()>0);
 		
+		System.out.println(joueurPassif+" a perdu !");
 	
 		
 	}

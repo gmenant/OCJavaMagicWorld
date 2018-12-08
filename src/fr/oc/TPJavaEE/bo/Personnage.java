@@ -24,8 +24,8 @@ public abstract  class  Personnage implements PersonnageInt {
 	public int getVie() {
 		return vie;
 	}
-	public void setVie(int niveau) {
-		this.vie = niveau*5;
+	public void setVie(int vie) {
+		this.vie = vie;
 	} 
 	public int getNiveau() {
 		return niveau;
@@ -57,7 +57,7 @@ public abstract  class  Personnage implements PersonnageInt {
 		setForce(force);
 		setAgilite(agilite);
 		setIntelligence(intelligence);
-		setVie(niveau);
+		setVie(niveau*5);
 		setNumPersonnage(numPersonnage);
 	}
 	@Override
