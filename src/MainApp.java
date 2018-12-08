@@ -2,15 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import fr.oc.TPJavaEE.bo.Personnage;
-import fr.oc.TPJavaEE.impl.PersonnageFactory;
-import fr.oc.TPJavaEE.util.ControleValeurs;
+import fr.oc.tpjavaobject.bo.Personnage;
+import fr.oc.tpjavaobject.impl.PersonnageFactory;
+import fr.oc.tpjavaobject.util.ControleValeurs;
 
 public class MainApp {
 
 	public static void main(String[] args) {
 		
-		final String ANSI_RED = "\u001B[31m";
 		Scanner sc = new Scanner(System.in);
 		
 		//Liste de joueurs

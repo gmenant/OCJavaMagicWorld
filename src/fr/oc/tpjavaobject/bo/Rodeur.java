@@ -1,10 +1,9 @@
-package fr.oc.TPJavaEE.bo;
+package fr.oc.tpjavaobject.bo;
 
 public class Rodeur extends Personnage{
 
 	public Rodeur(int niveau, int force, int agilite, int intelligence, int numPersonnage) {
 		super(niveau, force, agilite, intelligence, numPersonnage);
-		// TODO Auto-generated constructor stub
 	}
 	
 	//Attaque Basique - Tir à l’Arc : Effectue des dommages égaux à l’agilité du joueur sur l’adversaire.
@@ -13,11 +12,7 @@ public class Rodeur extends Personnage{
 		Integer agilite = this.getAgilite();
 		joueurPassif.setVie(joueurPassif.getVie()-agilite);
 		
-		String attaque = "Joueur "+this.getNumPersonnage();
-		attaque =  attaque +"Tir à l’Arc et inflige "+agilite+" dommages\n";
-		attaque =  attaque +"Joueur "+joueurPassif.getNumPersonnage()+ " perd "+agilite+" points de vie";
-		
-		return attaque;
+		return String.format("Joueur %d utilise Tir à l’Arc et inflige %d dommages%nJoueur %d perd %d points de vie",this.getNumPersonnage(), agilite, joueurPassif.getNumPersonnage(),agilite);
 		
 	}
 	
@@ -27,15 +22,14 @@ public class Rodeur extends Personnage{
 		int gain = getNiveau()/2;
 		this.setAgilite(gain);
 		
-		String attaque = "Joueur "+this.getNumPersonnage();
-		attaque =  attaque +"Concentration et gagne "+gain+"";
-		return attaque;
+		return String.format("Joueur %d utilise Concentration et gagne %d en agilité",this.getNumPersonnage(), gain);
+
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"Niarkniark je suis le Rodeur joueur a definir "+super.toString());
+				"Niarkniark je suis le Rodeur Joueur %s ",super.toString());
 	}
 
 	

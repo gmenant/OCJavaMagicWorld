@@ -1,6 +1,8 @@
-package fr.oc.TPJavaEE.util;
+package fr.oc.tpjavaobject.util;
 
-public class ControleValeurs {
+public abstract class ControleValeurs {
+	
+	
 	
 	public static Boolean verif1A100(Integer valeur){
 		Boolean test = true;

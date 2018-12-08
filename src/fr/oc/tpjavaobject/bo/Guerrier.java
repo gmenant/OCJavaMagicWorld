@@ -1,10 +1,9 @@
-package fr.oc.TPJavaEE.bo;
+package fr.oc.tpjavaobject.bo;
 
 public class Guerrier extends Personnage{
 
 	public Guerrier(int niveau, int force, int agilite, int intelligence, int numPersonnage) {
 		super(niveau, force, agilite, intelligence, numPersonnage);
-		// TODO Auto-generated constructor stub
 	}
 	
 	//Attaque Basique - Coup d’Épée : Effectue des dommages égaux à la force du joueur sur l’adversaire.
@@ -12,11 +11,9 @@ public class Guerrier extends Personnage{
 		Integer force = this.getForce();
 		joueurPassif.setVie(joueurPassif.getVie()-force);
 		
-		String attaque = "Joueur "+this.getNumPersonnage();
-			attaque =  attaque +" utilise Coup d’Épée et inflige "+force+" dommages\n";
-			attaque =  attaque + "Joueur "+joueurPassif.getNumPersonnage()+ " perd "+force+" points de vie";
+		return String.format("Joueur %d utilise Coup d’Épée et inflige %d dommages%nJoueur %d perd %d points de vie",this.getNumPersonnage(), force, joueurPassif.getNumPersonnage(),force);
 		
-		return attaque;
+		 
 		
 	}
 	
@@ -29,17 +26,13 @@ public class Guerrier extends Personnage{
 		this.setVie(this.getVie()-contreCoup);
 		joueurPassif.setVie(joueurPassif.getVie()-coup);
 		
-		String attaque = "Joueur "+this.getNumPersonnage();
-			attaque =  attaque +" utilise Coup de Rage et inflige "+coup+" dommages\n";
-			attaque =  attaque + "Joueur "+this.getNumPersonnage()+ " perd "+contreCoup+" points de vie\n";
-			attaque =  attaque + "Joueur "+joueurPassif.getNumPersonnage()+ " perd "+coup+" points de vie";
+		return String.format("Joueur %d utilise Coup de Rage et inflige %d dommages%nJoueur %d perd %d points de vie%nJoueur %d perd %d points de vie%n",this.getNumPersonnage(), coup, this.getNumPersonnage(),contreCoup,joueurPassif.getNumPersonnage(),coup);
 		
-		return attaque;
 	} 
 
 	@Override
 	public String toString() {
 		return String.format(
-				"Woarg je suis le Guerrier joueur "+super.toString());
+				"Woarg je suis le Guerrier Joueur %s ",super.toString());
 	}
 }

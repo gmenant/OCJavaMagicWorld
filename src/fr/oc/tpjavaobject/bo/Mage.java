@@ -1,10 +1,9 @@
-package fr.oc.TPJavaEE.bo;
+package fr.oc.tpjavaobject.bo;
 
 public class Mage extends Personnage{
 
 	public Mage(int niveau, int force, int agilite, int intelligence, int numPersonnage) {
 		super(niveau, force, agilite, intelligence, numPersonnage);
-		// TODO Auto-generated constructor stub
 	}
 	
 	//Attaque Basique - Boule de Feu : Effectue des dommages égaux à l’intelligence du joueur sur l’adversaire.
@@ -15,11 +14,8 @@ public class Mage extends Personnage{
 		joueurPassif.setVie(joueurPassif.getVie()-intelligence);
 		
 		//Affichage
-		String attaque = "Joueur "+this.getNumPersonnage();
-		attaque =  attaque +" utilise Boule de Feu et inflige "+intelligence+" dommages\n";
-		attaque =  attaque +"Joueur "+joueurPassif.getNumPersonnage()+ " perd "+intelligence+" points de vie";
-
-		return attaque;
+		return String.format("Joueur %d utilise  Boule de Feu et inflige %d dommages%nJoueur %d perd %d points de vie",this.getNumPersonnage(), intelligence, joueurPassif.getNumPersonnage(),intelligence);
+		
 		
 	}
 	
@@ -38,15 +34,13 @@ public class Mage extends Personnage{
 			this.setVie(totalVie);
 		}
 		
-		String attaque = "Joueur "+this.getNumPersonnage();
-		attaque =  attaque +" utilise Soin et gagne "+gain+" points de vie ";
-
-		return attaque;
+		return String.format("Joueur %d utilise Soin et gagne %d points de vie",this.getNumPersonnage(), gain);
+		
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"Abracadabra je suis le Mage joueur a definir "+super.toString());
+				"Abracadabra je suis le Mage Joueur %s",super.toString());
 	}
 }

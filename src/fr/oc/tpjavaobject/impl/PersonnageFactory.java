@@ -1,12 +1,13 @@
-package fr.oc.TPJavaEE.impl;
+package fr.oc.tpjavaobject.impl;
 
-import fr.oc.TPJavaEE.bo.Guerrier;
-import fr.oc.TPJavaEE.bo.Mage;
-import fr.oc.TPJavaEE.bo.Personnage;
-import fr.oc.TPJavaEE.bo.Rodeur;
+import fr.oc.tpjavaobject.bo.Guerrier;
+import fr.oc.tpjavaobject.bo.Mage;
+import fr.oc.tpjavaobject.bo.Personnage;
+import fr.oc.tpjavaobject.bo.Rodeur;
 
-public class PersonnageFactory {
+public final class PersonnageFactory {
 	
+
 	public static Personnage setPersonnage(Integer choixClassePersonnage, Integer niveau, Integer force, Integer agilite, Integer intelligence, Integer numPersonnage){
 		
 		Personnage personnage = null;
@@ -23,8 +24,7 @@ public class PersonnageFactory {
 			break;
 		default:
 			break;
-			
-		
+
 		}
 		return personnage;
 	}

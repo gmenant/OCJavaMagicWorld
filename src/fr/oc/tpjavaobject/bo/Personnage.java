@@ -1,6 +1,6 @@
-package fr.oc.TPJavaEE.bo;
+package fr.oc.tpjavaobject.bo;
 
-import fr.oc.TPJavaEE.buisness.PersonnageInt;
+import fr.oc.tpjavaobject.buisness.PersonnageInt;
 
 /**
  * @author Gabriel

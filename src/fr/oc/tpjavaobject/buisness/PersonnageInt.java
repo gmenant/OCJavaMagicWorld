@@ -1,6 +1,6 @@
-package fr.oc.TPJavaEE.buisness;
+package fr.oc.tpjavaobject.buisness;
 
-import fr.oc.TPJavaEE.bo.Personnage;
+import fr.oc.tpjavaobject.bo.Personnage;
 
 public interface PersonnageInt {
 
