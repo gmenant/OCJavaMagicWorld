@@ -28,7 +28,7 @@ public abstract  class  Personnage implements PersonnageInt {
 		this.vie = vie;
 	} 
 	public int getNiveau() {
-		return niveau;
+		return vie;
 	}
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
