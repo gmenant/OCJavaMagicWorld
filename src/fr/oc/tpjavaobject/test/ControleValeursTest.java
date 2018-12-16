@@ -26,14 +26,43 @@ public class ControleValeursTest {
 	
 	@Test
 	public void verif0A100Test() {
+		Integer valeur = 0;
+		assertTrue("Valeur correcte a été refusée",ControleValeurs.verif0A100(valeur));
+		valeur = 100;
+		assertTrue("Valeur correcte a été refusée",ControleValeurs.verif0A100(valeur));
+
+		valeur = -5;
+		assertFalse("Valeur inferieure à 0 a été acceptée",ControleValeurs.verif0A100(valeur));
+		valeur = 101;
+		assertFalse("Valeur supérieure à 3 a été acceptée",ControleValeurs.verif0A100(valeur));
+		
 	}
 	
 	@Test
 	public void verif1A3Test() {
+		Integer valeur = 1;
+		assertTrue("Valeur correcte a été refusée",ControleValeurs.verif1A3(valeur));
+		valeur = 3;
+		assertTrue("Valeur correcte a été refusée",ControleValeurs.verif1A3(valeur));
+		
+		valeur = 0;
+		assertFalse("Valeur 0 a été acceptée",ControleValeurs.verif1A3(valeur));
+		valeur = -5;
+		assertFalse("Valeur inferieure à 0 a été acceptée",ControleValeurs.verif1A3(valeur));
+		valeur = 101;
+		assertFalse("Valeur supérieure à 100 a été acceptée",ControleValeurs.verif1A3(valeur));
 	}
 	
 	@Test
 	public void verifStatTest() {
+		Integer force, agilite, intelligence, niveau;
+		niveau=90;
+		force = 30;
+		agilite = 30;
+		intelligence = 30; 
+		assertTrue("l'ensemble des elements n'est pas égal au niveau",ControleValeurs.verifStat(force, agilite, intelligence, niveau));
+		intelligence = 40;
+		assertFalse("la somme est fausse mais elle est bien acceptée",ControleValeurs.verifStat(force, agilite, intelligence, niveau));
 	}
 
 }
