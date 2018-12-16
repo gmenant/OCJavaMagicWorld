@@ -7,7 +7,7 @@ import fr.oc.tpjavaobject.impl.PersonnageFactory;
 import fr.oc.tpjavaobject.util.ControleValeurs;
 
 public class MainApp {
-
+ 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);

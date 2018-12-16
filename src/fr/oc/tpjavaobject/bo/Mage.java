@@ -1,12 +1,24 @@
 package fr.oc.tpjavaobject.bo;
 
 public class Mage extends Personnage{
-
+	
+	/**
+	 * 
+	 * @param niveau
+	 * @param force
+	 * @param agilite
+	 * @param intelligence
+	 * @param numPersonnage
+	 */
 	public Mage(int niveau, int force, int agilite, int intelligence, int numPersonnage) {
 		super(niveau, force, agilite, intelligence, numPersonnage);
 	}
 	
-	//Attaque Basique - Boule de Feu : Effectue des dommages égaux à l’intelligence du joueur sur l’adversaire.
+	/**
+	 * 	Attaque Basique - Boule de Feu : Effectue des dommages égaux à l’intelligence du joueur sur l’adversaire.
+	 *
+	 *@return void
+	 */
 	public String attaqueBasique(Personnage joueurPassif){
 		
 		//Calcul des données
@@ -15,12 +27,14 @@ public class Mage extends Personnage{
 		
 		//Affichage
 		return String.format("Joueur %d utilise  Boule de Feu et inflige %d dommages%nJoueur %d perd %d points de vie",this.getNumPersonnage(), intelligence, joueurPassif.getNumPersonnage(),intelligence);
-		
-		
 	}
-	
-	//Attaque Spéciale - Soin : Le joueur soigne sa vie et regagne sa quantité d’intelligence fois 2 en points de vie.
-	//Attention, il ne peut pas avoir plus de vie qu’il n’en avait au départ.
+
+	/**
+	 * 	Attaque Spéciale - Soin : Le joueur soigne sa vie et regagne sa quantité d’intelligence fois 2 en points de vie.
+	 *  Attention, il ne peut pas avoir plus de vie qu’il n’en avait au départ.
+	 *  
+	 *  @return void
+	 */
 	public String attaqueSpeciale(Personnage joueurPassif){
 		int gain = getIntelligence()*2;
 		
@@ -38,6 +52,9 @@ public class Mage extends Personnage{
 		
 	}
 
+	/**
+	 * ToString 
+	 */
 	@Override
 	public String toString() {
 		return String.format(

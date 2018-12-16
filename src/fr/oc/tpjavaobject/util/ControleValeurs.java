@@ -1,9 +1,18 @@
 package fr.oc.tpjavaobject.util;
 
+/**
+ * Class util de vérification des valeures saisies
+ * @author Gabriel
+ *
+ */
 public abstract class ControleValeurs {
 	
 	
-	
+	/**
+	 * Verfifie que la valeur est bien comprise entre 1 et 100
+	 * @param valeur
+	 * @return
+	 */
 	public static Boolean verif1A100(Integer valeur){
 		Boolean test = true;
 		
@@ -22,6 +31,11 @@ public abstract class ControleValeurs {
 		return test;
 		}
 	
+	/**
+	 * Verfifie que la valeur est bien comprise entre 0 et 100
+	 * @param valeur
+	 * @return
+	 */
 	public static Boolean verif0A100(Integer valeur){
 		Boolean test = true;
 		
@@ -40,6 +54,12 @@ public abstract class ControleValeurs {
 		return test;
 		}
 	
+	/**
+	 * 	 * Verfifie que la valeur est bien comprise entre 1 et 3
+
+	 * @param valeur
+	 * @return
+	 */
 	public static Boolean verif1A3(Integer valeur){
 		Boolean test = true;
 		
@@ -57,6 +77,17 @@ public abstract class ControleValeurs {
 			}
 		return test;
 		}
+	
+	
+	/**
+	 * 	 * Verfifie que la somme des valeur est bien egale au niveau
+
+	 * @param force
+	 * @param agilite
+	 * @param intelligence
+	 * @param niveau
+	 * @return
+	 */
 	
 	public static Boolean verifStat(Integer force, Integer agilite,Integer intelligence,Integer niveau){
 		Boolean test = true;

@@ -7,7 +7,16 @@ import fr.oc.tpjavaobject.bo.Rodeur;
 
 public final class PersonnageFactory {
 	
-
+	/**
+	 * Factory pour créer des personnages
+	 * @param choixClassePersonnage
+	 * @param niveau
+	 * @param force
+	 * @param agilite
+	 * @param intelligence
+	 * @param numPersonnage
+	 * @return
+	 */
 	public static Personnage setPersonnage(Integer choixClassePersonnage, Integer niveau, Integer force, Integer agilite, Integer intelligence, Integer numPersonnage){
 		
 		Personnage personnage = null;

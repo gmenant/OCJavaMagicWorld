@@ -51,6 +51,15 @@ public abstract  class  Personnage implements PersonnageInt {
 	public void setIntelligence(int intelligence) {
 		this.intelligence = intelligence;
 	}
+	
+	/**
+	 * Constructeur
+	 * @param niveau
+	 * @param force
+	 * @param agilite
+	 * @param intelligence
+	 * @param numPersonnage
+	 */
 	public Personnage(int niveau, int force, int agilite, int intelligence,int numPersonnage) {
 		super();
 		setNiveau(niveau);
@@ -60,6 +69,10 @@ public abstract  class  Personnage implements PersonnageInt {
 		setVie(niveau*5);
 		setNumPersonnage(numPersonnage);
 	}
+	
+	/**
+	 * ToString 
+	 */
 	@Override
 	public String toString() {
 		return String.format("%d niveau %d, je possède %d de vitalité, %d de force, %d d'agilité, et %d d'intelligence !",

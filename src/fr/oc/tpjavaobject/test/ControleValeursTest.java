@@ -8,6 +8,9 @@ import fr.oc.tpjavaobject.util.ControleValeurs;
 
 public class ControleValeursTest {
 
+	/**
+	 * Vérifie que le resultat est bien compris entre 1 et 100
+	 */
 	@Test
 	public void verif1A100Test() {
 		Integer valeur = 1;
@@ -23,7 +26,10 @@ public class ControleValeursTest {
 		assertFalse("Valeur supérieure à 100 a été acceptée",ControleValeurs.verif1A100(valeur));
 		
 	}
-	
+	 
+	/**
+	 * Vérifie que le resultat est bien compris entre 0 et 100
+	 */
 	@Test
 	public void verif0A100Test() {
 		Integer valeur = 0;
@@ -38,6 +44,9 @@ public class ControleValeursTest {
 		
 	}
 	
+	/**
+	 * Vérifie que le resultat est bien compris entre 1 et 3
+	 */
 	@Test
 	public void verif1A3Test() {
 		Integer valeur = 1;
@@ -51,8 +60,12 @@ public class ControleValeursTest {
 		assertFalse("Valeur inferieure à 0 a été acceptée",ControleValeurs.verif1A3(valeur));
 		valeur = 101;
 		assertFalse("Valeur supérieure à 100 a été acceptée",ControleValeurs.verif1A3(valeur));
+	
 	}
 	
+	/**
+	 * Vérifie que le resultat est bien la somme des 
+	 */
 	@Test
 	public void verifStatTest() {
 		Integer force, agilite, intelligence, niveau;
